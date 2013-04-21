@@ -99,12 +99,13 @@ def loaddata():
 
 
 # === Bootstrap the environment ===
-def bootstrap(create_admin=False, virtualenv=None):
+def bootstrap(create_admin=False, virtualenv=None, static=False):
     if virtualenv:
         local('mkvirtualenv %s' % 'goscale' if type(virtualenv) is bool else virtualenv)
     local('pip install -r requirements.txt')
     resetdb(create_admin)
-    collectstatic()
+    if static:
+        collectstatic()
     print 'Project is ready, execute "fab run" to run the server.'
 
 
