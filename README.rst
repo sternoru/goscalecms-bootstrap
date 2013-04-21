@@ -33,6 +33,7 @@ Change `project_name` to your actual project name.
 
 3. Install requirements and bootstrap the project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+::
 
     pip install -r requirements.txt
     fab bootstrap
