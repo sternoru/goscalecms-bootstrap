@@ -1,4 +1,4 @@
-GoScale CMS bootstrap template
+`GoScale CMS bootstrap template <https://github.com/sternoru/goscalecms-bootstrap#readme>`_
 ==============================
 
 This is a template project for `GoScale CMS <http://goscalecms.com>`_ (`GitHub repository <https://github.com/sternoru/goscalecms>`_).
@@ -26,10 +26,11 @@ Change `project_name` to your actual project name.
     
 2. Create a virtual environment (if not already created)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-::
+
+I suggest to use virtualenv or, even better, `virtualenvwrapper <http://virtualenvwrapper.readthedocs.org/en/latest/install.html#installation>`_ for managing requirements::
 
     # Create an environment if you have virtualenvwrapper installed
-    mkvirtualenv project_name
+    mkvirtualenv project_env
 
 3. Install requirements and bootstrap the project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -45,3 +46,22 @@ You're good to go!
 Run it like any other Django project or use fabric shortcut::
 
     fab run
+    
+This template comes with a pre-created superuser: admin/123, so you can quickly login to the django admin interface.
+It also has fixtures with some pages and plugins + twitter bootstrap theme to quick start the front-end.
+
+5. Keep rolling
+^^^^^^^^^^^^^^^
+
+To run your project later you just need to activate the virtualenv from the project directory::
+
+    # if you're using virtualenvwrapper
+    cd project_name
+    workon project_env
+    fab run
+    
+Screenshot of the succesfull installation
+-----------------------------------------
+
+.. image:: http://www.clipular.com/c?5069109=EEszsxZ23KG_TLB9A9ZnYQ3bRjY&f=.png
+

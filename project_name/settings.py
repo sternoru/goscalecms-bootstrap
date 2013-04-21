@@ -204,10 +204,10 @@ MIDDLEWARE_CLASSES = (
     'goscale.themes.site_middleware.SiteOnFlyDetectionMiddleware',
 )
 
-ROOT_URLCONF = 'project_name.urls'
+ROOT_URLCONF = '{{ project_name }}.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'project_name.wsgi.application'
+WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
 
 # SERIALIZATION_MODULES = {'json-pretty': 'goscale.utils.json_pretty'}
 
