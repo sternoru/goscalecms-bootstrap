@@ -1,0 +1,142 @@
+body {
+	padding-top: 20px;
+	padding-bottom: 40px;
+}
+
+/* Custom container */
+.container-narrow {
+	margin: 0 auto;
+	max-width: 700px;
+}
+.container-narrow > hr {
+	margin: 30px 0;
+}
+
+.dropdown-menu {
+	min-width: 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+	margin: 60px 0;
+	text-align: center;
+}
+.jumbotron h1 {
+	font-size: 72px;
+	line-height: 1;
+}
+.jumbotron p {
+	margin-bottom: 20px;
+	font-size: 21px;
+	font-weight: 200;
+	line-height: 30px;
+}
+.jumbotron .btn {
+	font-size: 21px;
+	padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+	margin: 60px 0;
+}
+.marketing p + h4 {
+	margin-top: 28px;
+}
+
+
+/* Contact us style */
+body .container-narrow .contact-us {
+	text-align: center;
+}
+	body .container-narrow .contact-us .masthead {
+		text-align: left;
+	}
+	body .container-narrow .contact-us form label {
+		text-align: right;
+		display: inline-block;
+		width: 160px;
+		font-size: 21px;
+		line-height: 30px;
+		margin: 10px 0;
+		text-rendering: optimizelegibility;
+		margin-right: 10px;
+		cursor: default;
+	}
+	body .container-narrow .contact-us form input, textarea {
+		width: 420px;
+		margin-right: 80px;
+	}
+	body .container-narrow .contact-us form input[type="text"] {
+		height: 30px;
+	}
+	body .container-narrow .contact-us form input.btn,
+	body .container-narrow .contact-us form input.form-button {
+		margin-left: 173px;
+		width: 434px;
+	}
+	body .container-narrow .contact-us form input.form-button {
+		margin-left: 180px;
+	}
+	body .container-narrow .contact-us form span.error_msg {
+		color: red;
+		display: block;
+		margin-left: 185px;
+		text-align: left;
+		width: 420px;
+	}
+	body .container-narrow .contact-us .footer {
+		text-align: left;
+	}
+
+
+/* Ajax loader */
+#content span.ajax-loader {
+	width: 100%;
+	height: 100px;
+	display: block;
+	background: url('../images/ajax-loader.gif') center center no-repeat;
+}
+
+
+/* Authentication */
+#content-block .register-content {
+	margin-top: 20px;
+}
+	#content .register-content .span4 {
+		margin-left: 50px;
+	}
+		#content .register-content .span4 .socialaccount_ballot {
+			
+		}
+			#content .register-content .span4 .socialaccount_ballot ul {
+				margin: 0;
+			}
+				#content .register-content .span4 .socialaccount_ballot ul li {
+					display: inline-block;
+				}
+
+
+/* User block */
+.nav li.user div.border {
+	border: 1px solid #666;
+	background: #FFF;
+	margin: 0 4px 0 0;
+	padding: 2px;
+	height: 28px;
+	width: 28px;
+	display: inline-block;
+}
+	.nav li.user div.border img {
+		margin: 0;
+		padding: 0;
+	}
+
+.nav-pills>li>a {
+    margin-top: 0;
+}
+
+.nav li.user a {
+	display: inline;
+	padding-left: 0;
+}

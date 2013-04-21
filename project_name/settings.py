@@ -1,7 +1,11 @@
-# Django settings for goscalecms_bootstrap project.
+# -*- coding: utf-8 -*-
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+
+PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
+PROJECT_NAME = PROJECT_PATH.split('/')[-1]
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -11,8 +15,8 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'sqlite.db',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
@@ -35,6 +39,47 @@ TIME_ZONE = 'America/Chicago'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en-us'
 
+LANGUAGES = (
+    ('en', u'English'),
+    ('ru', u'Русский'),
+    ('fr', u'Français'),
+)
+
+DEFAULT_LANGUAGE = 'en'
+
+CMS_LANGUAGES = {
+    1:[
+        {'code': 'en', 'name': u'English'},
+        {'code': 'ru', 'name': u'Русский'},
+        {'code': 'fr', 'name': u'Français'},
+    ],
+    'default': {
+        'fallbacks': ['en', 'ru', 'fr'],
+        'redirect_on_fallback':True,
+        'public': True,
+        'hide_untranslated': True,
+    },
+}
+
+""" CMS Settings """
+
+CMS_PERMISSION = True
+FILER_ENABLE_PERMISSIONS = CMS_PERMISSION
+CMS_REDIRECTS = True
+CMS_SEO_FIELDS = True
+
+CMS_TEMPLATES = (
+    ('empty.html', 'Empty'),
+)
+
+CMS_TEXT_WRAPPERS = (
+    ('(marketing) marketing_col', {
+        'render_template': 'cms_text/marketing.html'
+    }),
+)
+
+THEME = 'marketing'
+
 SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
@@ -50,7 +95,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = os.path.join(PROJECT_PATH, 'media')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -61,7 +106,7 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = os.path.join(PROJECT_PATH, 'static')
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
@@ -92,28 +137,82 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
+TEMPLATE_DIRS = (
+    os.path.join(PROJECT_PATH, "templates"),
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    # Django
+    'django.core.context_processors.request',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.i18n',
+
+    # Django CMS
+    'cms.context_processors.media',
+    'sekizai.context_processors.sekizai',
+
+    # GoScale
+    'goscale.themes.context_processors.theme',
+
+    # Auth
+    "allauth.account.context_processors.account",
+    "allauth.socialaccount.context_processors.socialaccount",
+)
+
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    "django.contrib.auth.backends.ModelBackend",
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+
+LOGIN_REDIRECT_URL = '/'
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_VERIFICATION = 'optional'
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'https://www.googleapis.com/auth/userinfo.profile',
+            'https://www.googleapis.com/auth/userinfo.email'
+        ],
+        'AUTH_PARAMS': { 'access_type': 'online' }
+    }
+}
+
 MIDDLEWARE_CLASSES = (
+    # Django
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.doc.XViewMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # Django CMS
+    'cms.middleware.page.CurrentPageMiddleware',
+    'cms.middleware.user.CurrentUserMiddleware',
+    'cms.middleware.toolbar.ToolbarMiddleware',
+    'cms.middleware.language.LanguageCookieMiddleware',
+
+    # GoSCale
+    'goscale.themes.site_middleware.SiteOnFlyDetectionMiddleware',
 )
 
-ROOT_URLCONF = 'goscalecms_bootstrap.urls'
+ROOT_URLCONF = 'project_name.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'goscalecms_bootstrap.wsgi.application'
+WSGI_APPLICATION = 'project_name.wsgi.application'
 
-TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-)
+# SERIALIZATION_MODULES = {'json-pretty': 'goscale.utils.json_pretty'}
 
 INSTALLED_APPS = (
+    # core apps
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -121,9 +220,59 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+
+    # helper apps
+    'south',
+    'gunicorn',
+    'django_extensions',
+    'sitemetrics',
+    'site_basics',
+    #'storages',
+
+    # django-cms related apps:
+    'cms',
+    'mptt',
+    'menus',
+    'sekizai',
+    'filer',
+    #'cms.plugins.text',
+    'cms.plugins.snippet',
+    'cmsplugin_filer_file',
+    'cmsplugin_filer_folder',
+    'cmsplugin_filer_image',
+    'cmsplugin_filer_teaser',
+    'cmsplugin_filer_video',
+    'cmsplugin_contact',
+    'cmsplugin_text_wrapper',  # alternative to 'cms.plugins.text'
+
+    # goscalecms related apps:
+    'goscale',
+    'goscale.themes',
+    'goscale.plugins.videos',
+    'goscale.plugins.pictures',
+    'goscale.plugins.feeds',
+    'goscale.plugins.forms',
+    'goscale.plugins.calendar',
+    'goscale.plugins.presentations',
+
+    # Auth apps
+    'avatar',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    # 'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.openid',
+    #'allauth.socialaccount.providers.facebook',
+    #'allauth.socialaccount.providers.twitter',
+    # 'allauth.socialaccount.providers.github',
+    #'allauth.socialaccount.providers.linkedin',
+    #'allauth.socialaccount.providers.persona',
+    #'allauth.socialaccount.providers.soundcloud',
+    # 'allauth.socialaccount.providers.stackexchange',
+    #'allauth.socialaccount.providers.weibo',
 )
 
 # A sample logging configuration. The only tangible logging

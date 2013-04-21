@@ -1,0 +1,222 @@
+/* videos plugin */
+.goscale-plugins-videos {
+	
+}
+	h1 {
+		height: auto;
+		font-size: 17.5px;
+		margin: 60px 0 10px 0;
+		font-family: inherit;
+		font-weight: bold;
+		line-height: 20px;
+		color: inherit;
+		text-rendering: optimizelegibility;
+	}
+	.goscale-plugins-videos .topBar {
+		border-bottom: 1px solid #EEE;
+		margin-bottom: 60px;
+		padding-bottom: 40px;
+	}
+	.goscale-plugins-videos.lb .topBar {
+		border: 0;
+		margin: 0;
+		padding: 0;
+	}
+		.videoListContainer .videos .VideosList .VideoContainer {
+			border-color: #08C;
+		}
+		.videoListContainer .videos .VideosList .VideoContainer.selected {
+			border-color: #5BB75B;
+		}
+			.videoListContainer .videos .VideosList .VideoContainer .VideoTitle {
+				/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+				background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwODhjYyIgc3RvcC1vcGFjaXR5PSIwLjgiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwODhjYyIgc3RvcC1vcGFjaXR5PSIwLjgiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+				background: -moz-linear-gradient(top, rgba(0,136,204,0.8) 0%, rgba(0,136,204,0.8) 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,136,204,0.8)), color-stop(100%,rgba(0,136,204,0.8))); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top, rgba(0,136,204,0.8) 0%,rgba(0,136,204,0.8) 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top, rgba(0,136,204,0.8) 0%,rgba(0,136,204,0.8) 100%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(top, rgba(0,136,204,0.8) 0%,rgba(0,136,204,0.8) 100%); /* IE10+ */
+				background: linear-gradient(to bottom, rgba(0,136,204,0.8) 0%,rgba(0,136,204,0.8) 100%); /* W3C */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc0088cc', endColorstr='#cc0088cc',GradientType=0 ); /* IE6-8 */
+				color: #fff;
+			}
+			.videoListContainer .videos .VideosList .VideoContainer.selected .VideoTitle {
+				/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+				background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzViYjc1YiIgc3RvcC1vcGFjaXR5PSIwLjgiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzViYjc1YiIgc3RvcC1vcGFjaXR5PSIwLjgiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+				background: -moz-linear-gradient(top, rgba(91,183,91,0.8) 0%, rgba(91,183,91,0.8) 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(91,183,91,0.8)), color-stop(100%,rgba(91,183,91,0.8))); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top, rgba(91,183,91,0.8) 0%,rgba(91,183,91,0.8) 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top, rgba(91,183,91,0.8) 0%,rgba(91,183,91,0.8) 100%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(top, rgba(91,183,91,0.8) 0%,rgba(91,183,91,0.8) 100%); /* IE10+ */
+				background: linear-gradient(to bottom, rgba(91,183,91,0.8) 0%,rgba(91,183,91,0.8) 100%); /* W3C */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc5bb75b', endColorstr='#cc5bb75b',GradientType=0 ); /* IE6-8 */
+			}
+	.goscale-plugins-videos .video-content {
+		margin: 60px 0;
+	}
+
+
+/* feeds plugin */
+.ContentList {
+	margin: 60px 0;
+	padding-bottom: 40px;
+	border-bottom: 1px solid #EEE;
+}
+	.ContentList p {
+		margin-bottom: 20px;
+		font-size: 21px;
+		font-weight: 200;
+		line-height: 30px;
+	}
+.goscale-plugins-feeds .ContentList {
+	margin-top: 0;
+	padding-bottom: 0;
+	border-bottom: 0;
+}
+	.goscale-plugins-feeds .ContentList dd {
+		margin-bottom: 10px;
+	}
+	.goscale-plugins-feeds .ContentList p {
+		font-size: 14px;
+	}
+	.goscale-plugins-feeds .ContentList blockquote {
+		font-size: 14px;
+		padding: 0;
+		border: 0;
+		border: 0;
+	}
+	
+
+/* pictures plugin */
+.goscale-plugins-pictures {
+	float: left;
+	width: 100%;
+	margin: 0 0 30px 0;
+	padding-bottom: 60px;
+	border-bottom: 1px solid #EEE;
+	min-height: 300px;
+}
+	.goscale-plugins-pictures h1 {
+		margin-top: 30px;
+	}
+	.goscale-plugins-pictures .CarouselTitle {
+		color: rgb(51, 51, 51);
+		display: block;
+		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-size: 18px;
+		font-weight: bold;
+		height: 20px;
+		line-height: 20px;
+		margin: 0;
+		text-rendering: optimizelegibility;
+		width: 700px;
+	}
+	.goscale-plugins-pictures.carousel {
+		text-align: center;
+		min-height: 0;
+		padding: 0;
+		margin: 0;
+		border: none;
+	}
+	#carouselContainer #arrowLeft {
+		left: -30px;
+	}
+	#carouselContainer #arrowRight {
+		left: 390px;
+	}
+	.goscale-plugins-pictures #carouselContainer #carousel {
+		left: 50%;
+		margin: 0 0 0 -190px;
+	}
+	.am-container {
+		float: left;
+		margin-top: 20px;
+	}
+	.slides {
+		margin-top: 30px;
+	}
+	.gv_galleryWrap {
+		margin-top: 30px;
+	}
+.footer {
+	clear: both;
+}
+
+
+/* calendar plugin */
+.goscale-plugins-calendar .ContentList {
+	margin: 0;
+	padding-bottom: 0;
+	border: none;
+}
+	.goscale-plugins-calendar .ContentList dd, .goscale-plugins-feeds .ContentList dd {
+		margin: 5px 0 15px 0;
+	}
+	.goscale-plugins-calendar .location-details {
+		background: none;
+	}
+		.goscale-plugins-calendar .location-details .ContentDetailLinkLabel {
+			font-weight: bold;
+			cursor: pointer;
+		}
+
+
+/* form plugin */
+body .container-narrow .contact-us form label.ss-q-help {
+	display: none;
+}
+.goscale-plugins-form .form-button {
+	display: none;
+}
+.form-buttons .goscale-plugins-form .form-button {
+	display: block;
+}
+.form-buttons .goscale-plugins-form .form-button a {
+	background: #04c;
+	color:#fff;
+	text-shadow:0 -1px 0 rgba(0,0,0,0.25);
+	background-color:#5bb75b;
+	*background-color:#51a351;
+	background-image:-moz-linear-gradient(top,#62c462,#51a351);
+	background-image:-webkit-gradient(linear,0 0,0 100%,from(#62c462),to(#51a351));
+	background-image:-webkit-linear-gradient(top,#62c462,#51a351);
+	background-image:-o-linear-gradient(top,#62c462,#51a351);
+	background-image:linear-gradient(to bottom,#62c462,#51a351);
+	background-repeat:repeat-x;
+	border-color:#51a351 #51a351 #387038;
+	border-color:rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462',endColorstr='#ff51a351',GradientType=0);
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.goscale-plugins-form input.form-button,
+#form-lb form input.form-button {
+	display: block;
+	padding: 11px 19px;
+	height: 44px;
+	line-height: 20px;
+	background: #04c;
+	border-radius: 6px;
+	color:#fff;
+	text-shadow:0 -1px 0 rgba(0,0,0,0.25);
+	background-color:#5bb75b;
+	*background-color:#51a351;
+	background-image:-moz-linear-gradient(top,#62c462,#51a351);
+	background-image:-webkit-gradient(linear,0 0,0 100%,from(#62c462),to(#51a351));
+	background-image:-webkit-linear-gradient(top,#62c462,#51a351);
+	background-image:-o-linear-gradient(top,#62c462,#51a351);
+	background-image:linear-gradient(to bottom,#62c462,#51a351);
+	background-repeat:repeat-x;
+	border-color:#51a351 #51a351 #387038;
+	border-color:rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462',endColorstr='#ff51a351',GradientType=0);
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.goscale-plugins-form input.form-button:hover,
+#form-lb form input.form-button:hover,
+.goscale-plugins-form input.form-button:active,
+#form-lb form input.form-button:active,
+.goscale-plugins-form input.form-button[disabled],
+#form-lb form input.form-button[disabled] {
+	color:#fff;
+	background:#51a351;
+}

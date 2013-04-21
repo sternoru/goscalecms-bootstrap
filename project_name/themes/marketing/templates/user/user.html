@@ -1,0 +1,18 @@
+{% load url from future %}
+{% load i18n %}
+{% load account %}
+{% load avatar_tags %}
+
+{% if request.user.is_authenticated %}
+    <li class="no-al pull-right user">
+        <a>{% user_display user %}</a>
+        <div class="border">{% avatar request.user 28 %}</div>
+    </li>
+    <li class="no-al pull-right">
+		<a href="{% url 'account_logout' %}" rel="next">{% trans "Logout" %}</a>
+	</li>
+{% else %}
+    <li class="no-al pull-right">
+		<a href="{% url 'goscale_account_signup' %}" rel="next">{% trans "Log in" %} / {% trans "Register" %}</a>
+	</li>
+{% endif %}

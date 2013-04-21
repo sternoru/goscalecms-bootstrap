@@ -1,0 +1,12 @@
+/* menu hack */
+ul.nav li.dropdown.hover:hover ul.dropdown-menu {
+    display: block;    
+}
+
+.hover a.menu:after, .hover .dropdown-toggle:after {
+    content: none;
+}
+
+.navbar .hover .dropdown-menu, .nav .hover .dropdown-menu {
+	margin-top: 0px;
+}

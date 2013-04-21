@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load cms_tags i18n %}
+
+{% block content %}
+	<div class="jumbotron">
+		{% placeholder top_container %}
+	</div>
+
+	<hr>
+
+	<div class="row-fluid marketing">
+		{% placeholder marketing %}
+	</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% load menu_tags %}
+
+<li class="dropdown pull-right no-al">
+  {% for language in languages %}
+	{% ifequal current_language language.0 %}
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ language.1 }} <b class="caret"></b></a>
+	{% endifequal %}
+  {% endfor %}
+  <ul class="dropdown-menu">
+	{% for language in languages %}
+		{% ifequal current_language language.0 %}
+		{% else %}
+			<li><a href="{% page_language_url language.0 %}">{{ language.1 }}</a></li>
+		{% endifequal %}
+	{% endfor %}
+  </ul>
+</li>

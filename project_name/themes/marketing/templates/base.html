@@ -1,0 +1,75 @@
+{% load cms_tags menu_tags sekizai_tags goscale_tags %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>{% block head_title %}{% page_attribute "page_title" %}{% endblock %} | Bootstrap marketing</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		{% render_block "css" %}
+		{% addtoblock "css" %}
+			<link href="{{ STATIC_THEME_URL }}css/themes/{{ goscale_bootstrap_theme }}/bootstrap.min.css" rel="stylesheet" type="text/css">
+			<link href="{{ STATIC_THEME_URL }}css/style.css" rel="stylesheet" type="text/css">
+			<link href="{{ STATIC_THEME_URL }}css/menu-hack.css" rel="stylesheet" type="text/css">
+		{% endaddtoblock %}
+		<!--[if IE]>
+			<link  href="{{ STATIC_URL }}goscale/css/ie.css" rel="stylesheet" type="text/css" />
+		<![endif]-->
+		
+		{% addtoblock "extra_css" %}
+			<link rel="stylesheet" type="text/css" href="{{ STATIC_THEME_URL }}css/plugins-override.css" />
+		{% endaddtoblock %}
+		
+		{% addtoblock "js" %}
+			<script type="text/javascript" src="{{ STATIC_THEME_URL }}js/jquery-1.8.3.min.js"></script>
+			<script type="text/javascript" src="{{ STATIC_THEME_URL }}js/bootstrap.min.js"></script>
+			{% if goscale_config.GOSCALE_AJAXLINKS %}
+				<script type="text/javascript" src="{{ STATIC_URL }}goscale/js/sammy-latest.min.js"></script>
+				<script type="text/javascript" src="{{ STATIC_URL }}goscale/js/jquery.ajaxlinks.min.js"></script>
+				<script type="text/javascript" src="{{ STATIC_THEME_URL }}js/utils.js"></script>
+				<script type="text/javascript" src="{{ STATIC_URL }}goscale/js/goscale.ajax.js"></script>
+			{% endif %}
+			<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+			<!--[if lt IE 9]>
+			  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+		{% endaddtoblock %}
+		{% render_block "js" %}
+	</head>
+	<body class="theme-{{ goscale_bootstrap_theme }}">
+		{% cms_toolbar %}
+		
+		<div class="container-narrow">
+			<div class="masthead">
+				<ul class="nav nav-pills pull-right">
+					{% show_menu 0 100 100 100 "menu/menu.html" %}
+                    {% goscale_user %}
+					{% language_chooser "menu/language_chooser.html" %}
+				</ul>
+				<h3 class="muted">{{ site.name }}</h3>
+			</div>
+
+			<hr>
+			
+			{% placeholder base_content %}
+			
+			<div id="content">
+				{% block body %}
+					{% block content %}{% endblock %}
+				{% endblock %}
+			</div>
+			
+			<hr>
+
+			<div class="footer">
+				<p>&copy; Company 2012</p>
+			</div>
+		</div> <!-- /container -->
+		
+		{% block base_content %}
+			{% placeholder "base_content" or %}{% show_placeholder "base_content" "home" %}{% endplaceholder %}
+		{% endblock %}
+		
+		{% render_block "extra_css" %}
+	</body>
+</html>

@@ -1,0 +1,13 @@
+[
+{
+    "pk": 1, 
+    "model": "themes.theme", 
+    "fields": {
+        "theme_file": "", 
+        "name": "marketing", 
+        "sites": [
+            1
+        ]
+    }
+}
+]
