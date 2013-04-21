@@ -14,14 +14,31 @@ Credits
 
 How to install
 --------------
+
+Change `project_name` to your actual project name.
+
+1. Create a project from template
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ::
 
     django-admin.py startproject --template=https://github.com/sternoru/goscalecms-bootstrap/archive/master.zip --extension=py,md,rst project_name
     cd project_name
+    
+2. Create a virtual environment (if not already created)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+::
+
+    # Create an environment if you have virtualenvwrapper installed
+    mkvirtualenv project_name
+
+3. Install requirements and bootstrap the project
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
     pip install -r requirements.txt
     fab bootstrap
-
-Change `project_name` to your actual project name.
+    
+4. Run it!
+^^^^^^^^^^
 
 You're good to go!
 Run it like any other Django project or use fabric shortcut::
